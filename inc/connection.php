@@ -10,11 +10,3 @@ try {
     echo $e->getMessage();    
     exit;
 }
-
-
-try {
-   $results = $db->query("SELECT number, name FROM pokies"); 
-} catch (Exception $e) {
-    echo "Unable to retrieve results";
-    exit;
-}
