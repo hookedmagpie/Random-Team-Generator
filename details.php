@@ -3,12 +3,11 @@
     include("inc/func.php");
     if (isset($_GET["id"])) {
         $id = $_GET["id"];
-        if (isset($team[$id])) {
-            $item = $team[$id];
-        }
+        $item = single_pokie_details($_GET['id']);
     }
 
     $pageTitle = $item["name"];
+var_dump($_GET);
     ?> 
 
 <div>

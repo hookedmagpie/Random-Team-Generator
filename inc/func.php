@@ -25,3 +25,15 @@ function get_item_html($item) {
         . "</p>";
     return $output;
 }
+
+
+
+function single_pokie_details($id) {
+   $results = $db->prepare(
+      "SELECT *
+      FROM pokies
+      WHERE number = :id");
+    $results->bindParam(":id",$_GET['id']);
+    $results->execute();
+    return $results->fetchAll();
+}
