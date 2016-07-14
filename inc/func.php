@@ -4,7 +4,7 @@ function random_pokies_array() {
     include("connection.php");
     try {
        $results = $db->query(
-         "SELECT name, img 
+         "SELECT name, img, number
          FROM pokies
          ORDER BY RAND()
          LIMIT 6"
@@ -18,10 +18,10 @@ function random_pokies_array() {
 }
 
 function get_item_html($item) {
-    $output = "<li><img src='"
+    $output = "<li><a href='details.php?id="
+        . $item["number"] . "'><img src='"
         . $item["img"] . "'>"
         . "<p>" . $item["name"]
         . "</p>";
     return $output;
 }
-
