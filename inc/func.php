@@ -4,7 +4,7 @@ function random_pokies_array() {
     include("connection.php");
     try {
        $results = $db->query(
-         "SELECT name, img 
+         "SELECT name, img, number
          FROM pokies
          ORDER BY RAND()
          LIMIT 6"
@@ -13,15 +13,28 @@ function random_pokies_array() {
     echo "Unable to retrieve results";
     exit;
 }
-    $team = $results->fetchAll();
-    return $team;
+   return $results->fetchAll();
+   
 }
 
 function get_item_html($item) {
-    $output = "<li><img src='"
+    $output = "<li><a href='details.php?id="
+        . $item["number"] . "'><img src='"
         . $item["img"] . "'>"
-        . "<p>" . $item["name"]
+        . "<p>" . ucfirst($item["name"])
         . "</p>";
     return $output;
 }
 
+
+
+function single_pokie_details($id) {
+   include("connection.php");
+   $results = $db->prepare(
+      "SELECT *
+      FROM pokies
+      WHERE number = :id");
+    $results->bindParam(":id",$_GET['id']);
+    $results->execute();
+    return $results->fetchAll()[0];
+}
