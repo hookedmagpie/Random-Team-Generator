@@ -5,7 +5,6 @@
         $id = $_GET["id"];
         $item = single_pokie_details($_GET['id']);
     }
-//var_dump($item);
     ?> 
 <div class="info">
 <h2>

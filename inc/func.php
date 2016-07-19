@@ -21,7 +21,7 @@ function get_item_html($item) {
     $output = "<li><a href='details.php?id="
         . $item["number"] . "'><img src='"
         . $item["img"] . "'>"
-        . "<p>" . ucfirst($item["name"])
+        . "<p>" . ucwords($item["name"])
         . "</p>";
     return $output;
 }

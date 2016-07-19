@@ -3,6 +3,8 @@
     include("inc/func.php");
     ?> 
 ?>
+
+    <h4>Refresh for a new team!</h4>
     <ul class="items">
             <?php
             $random = random_pokies_array();

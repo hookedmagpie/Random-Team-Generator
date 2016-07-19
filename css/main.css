@@ -16,9 +16,9 @@ footer {
 h1 {
     font-family: 'Press Start 2P', sans-serif;
     margin: 15px 0;
-    font-size: 1.75em;
+    font-size: 2.2em;
     font-weight: normal;
-    padding-top: 7px;
+    padding: 20px 20px;
     text-align: center;
     background-color: #f0f0f0;
 }
@@ -28,6 +28,12 @@ h2 {
     font-size: 2.5em;
     font-weight: normal;
     text-align: center;
+}
+
+h4 {
+    margin: 15px 0;
+    text-align: center;
+    background-color: #f0f0f0;
 }
 
 
@@ -51,4 +57,13 @@ li {
 
 .items li a {
     text-decoration: none;
+    font-size: 1.5em;
+    color: black;
 }
+
+.items li a:hover {
+    text-decoration: none;
+    font-size: 1.75em;
+    color: red;
+}
+
